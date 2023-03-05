@@ -1,15 +1,19 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:flutter_login/login.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
   @override
   State<HomeScreen> createState() => _HomeScreenState();
+
+  
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool passwordVisible=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -106,8 +110,13 @@ class _HomeScreenState extends State<HomeScreen> {
               minimumSize: const Size(100,50),
               maximumSize: const Size(150, 75)
             ),
-            onPressed: (){}, 
-            child: const Text("change color"),
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const LoginScreen()),
+              );
+            }, 
+            child: const Text("Goto Login"),
             
           ),
           // ignore: prefer_const_constructors
